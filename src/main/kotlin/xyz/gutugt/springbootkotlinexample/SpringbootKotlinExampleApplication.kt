@@ -3,9 +3,8 @@ package xyz.gutugt.springbootkotlinexample
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
-class SpringbootKotlinExampleApplication
+@SpringBootApplication class SpringbootKotlinExampleApplication
 
 fun main(args: Array<String>) {
-	runApplication<SpringbootKotlinExampleApplication>(*args)
+  runApplication<SpringbootKotlinExampleApplication>(*args)
 }
