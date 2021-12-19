@@ -6,6 +6,7 @@ plugins {
   kotlin("jvm") version "1.6.0"
   kotlin("plugin.spring") version "1.6.0"
   id("com.diffplug.spotless") version "6.0.5"
+  id("io.gitlab.arturbosch.detekt").version("1.19.0")
 }
 
 group = "xyz.gutugt"
@@ -26,6 +27,11 @@ dependencies {
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {
   kotlin { ktfmt("0.30") }
   kotlinGradle { ktfmt("0.30") }
+}
+
+detekt {
+  buildUponDefaultConfig = true
+  ignoreFailures = true
 }
 
 tasks.withType<KotlinCompile> {
