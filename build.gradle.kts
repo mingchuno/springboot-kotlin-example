@@ -18,9 +18,13 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 repositories { mavenCentral() }
 
 dependencies {
+  implementation("org.http4k:http4k-core:4.17.5.0")
+  implementation("org.http4k:http4k-client-jetty:4.17.5.0")
   implementation("org.springframework.boot:spring-boot-starter")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  implementation("org.springframework.boot:spring-boot-starter-web")
+  implementation("io.github.microutils:kotlin-logging:2.1.21")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
