@@ -18,7 +18,7 @@ class FoobarController(
   }
 
   @GetMapping("/visit/{key}")
-  fun visit(@PathVariable key: String): CounterResponse {
+  suspend fun visit(@PathVariable key: String): CounterResponse {
     // TODO: validate request params
     return counterService.visit(CounterRequest(key = key))
   }
