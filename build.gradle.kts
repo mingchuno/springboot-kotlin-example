@@ -40,6 +40,7 @@ configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
 detekt {
   buildUponDefaultConfig = true
+  // FIXME: enable it later
   ignoreFailures = true
 }
 

@@ -10,3 +10,4 @@
 - [ ] spring annotation and DI config
 - [ ] testing, mocking and assertion
 - [ ] async and coroutine support
+- [ ] lib version control using Gradle new feature
