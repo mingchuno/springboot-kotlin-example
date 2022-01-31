@@ -4,6 +4,7 @@ import io.ktor.client.request.*
 import kotlinx.serialization.Serializable
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
+import xyz.gutgut.springbootkotlinexample.extensions.plusOne
 import xyz.gutugt.springbootkotlinexample.http.KtorHttpClient
 
 private val logger = KotlinLogging.logger {}
@@ -19,7 +20,8 @@ class CounterServiceImpl : CounterService {
     val response: CountApiResponse =
         KtorHttpClient.httpClient.get("https://api.countapi.xyz/hit/gutgut.xyz/${countRequest.key}")
     logger.info { response }
-    return CounterResponse(count = response.value)
+    // Demo app depends on lib using `plusOne` function
+    return CounterResponse(count = response.value.plusOne())
   }
 }
 
