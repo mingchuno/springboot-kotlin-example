@@ -11,3 +11,4 @@
 - [ ] testing, mocking and assertion
 - [ ] async and coroutine support
 - [ ] lib version control using Gradle new feature
+- [ ] HTTP client
