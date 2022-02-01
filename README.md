@@ -17,9 +17,15 @@
 - [ ] HTTP client
 - [ ] Dockerize and deploy?
 
-## Intellij intergation
+## Intellij integration
 
 Install the following plugin in your Intellij
 
 * `ktfmt`
 * `kotest` (https://kotest.io/docs/intellij/intellij-plugin.html)
+
+## Get started
+
+```bash
+./gradlew check
+```

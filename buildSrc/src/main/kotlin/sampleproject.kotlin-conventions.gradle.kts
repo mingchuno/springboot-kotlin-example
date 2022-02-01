@@ -1,3 +1,10 @@
+/**
+ * This is where you usual "build.gradle.kts" goes to when using multi modules build. This is
+ * actually a plugin which you can use in any of your modules. This
+ * "sampleproject.kotlin-conventions" define the basic build setting for other to extend such as
+ * integrating spotless/ktfmt and detekt, define JVM toolchain/compiled byte code version, using
+ * JUnit platform for testing. You name it. Common gradle setting should be put in here
+ */
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
