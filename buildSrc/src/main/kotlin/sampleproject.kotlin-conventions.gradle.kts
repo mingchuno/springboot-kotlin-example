@@ -34,4 +34,8 @@ tasks.withType<KotlinCompile> {
   }
 }
 
-tasks.withType<Test> { useJUnitPlatform() }
+tasks.withType<Test> {
+  useJUnitPlatform()
+  reports { junitXml.required.set(false) }
+  systemProperty("gradle.build.dir", project.buildDir)
+}

@@ -4,4 +4,6 @@ enableFeaturePreview("VERSION_CATALOGS")
 
 include("app")
 
-include("lib")
+include("test-common")
+
+include("common")
