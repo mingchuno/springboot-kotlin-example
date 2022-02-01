@@ -1,0 +1,3 @@
+# Add `-Dspring.profiles.active=production` to activate it
+app:
+  foobar: "You should see this in production"

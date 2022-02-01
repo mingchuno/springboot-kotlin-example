@@ -1,0 +1,15 @@
+# This is the default Properties that Spring will load
+# Env specific Properties can be found in application-<env>.yml
+debug: false
+# Example of changing log level
+# Reference: https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.logging
+logging:
+  level:
+    root: "info"
+    "xyz.gutugt.springbootkotlinexample.foobar": "debug"
+app:
+  foobar: "The answer to the question is..."
+  example:
+    name: "Example config value that will load by data class"
+    age: 37
+    enable: true

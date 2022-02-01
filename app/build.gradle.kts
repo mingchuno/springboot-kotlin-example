@@ -14,6 +14,7 @@ dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
   implementation("org.springframework.boot:spring-boot-starter-web")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
+  annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
   testImplementation(libs.bundles.kotest)
   testImplementation(libs.kotest.extensions.spring)
   testImplementation(project(":test-common"))

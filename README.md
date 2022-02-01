@@ -2,9 +2,10 @@
 
 ## TODOs
 
-- [ ] config and spring profile
-- [ ] logging
+- [x] config and spring profile
+- [x] logging
 - [ ] multiple layer testing spec
+    - How to override property source?
 - [x] multiple gradle module support
 - [x] ktfmt and detekt
 - [ ] spring annotation and DI config
@@ -12,9 +13,11 @@
     - [ ] fix Junit report generation
     - [ ] upload artifact to CI
 - [ ] async and coroutine support
+    - [ ] Switch to Spring WebFlux instead
 - [x] Gradle version catalogs
     - [ ] Fix using plugin inside `buildSrc`
-- [ ] HTTP client
+- [x] HTTP client
+    - [ ] DI on HTTP client?
 - [ ] Dockerize and deploy?
 
 ## Intellij integration

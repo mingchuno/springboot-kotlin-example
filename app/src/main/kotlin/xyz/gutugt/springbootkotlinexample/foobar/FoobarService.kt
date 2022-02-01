@@ -1,5 +1,6 @@
 package xyz.gutugt.springbootkotlinexample.foobar
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import xyz.gutugt.springbootkotlinexample.counter.CounterRequest
 import xyz.gutugt.springbootkotlinexample.counter.CounterResponse
@@ -15,8 +16,11 @@ interface FoobarService {
  * suspend function well.
  */
 @Service
-class FoobarServiceImpl(private val counterService: CounterService) : FoobarService {
-  override fun getFoobar(): Foobar = Foobar("bar")
+class FoobarServiceImpl(
+    private val counterService: CounterService,
+    @Value("\${app.foobar}") private val foobarStr: String
+) : FoobarService {
+  override fun getFoobar(): Foobar = Foobar(foobarStr)
 
   override suspend fun visit(request: CounterRequest): CounterResponse {
     // TODO: validate request params
