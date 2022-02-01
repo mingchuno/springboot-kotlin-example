@@ -9,7 +9,17 @@
 - [x] ktfmt and detekt
 - [ ] spring annotation and DI config
 - [ ] testing, mocking and assertion
+    - [ ] fix Junit report generation
+    - [ ] upload artifact to CI
 - [ ] async and coroutine support
 - [x] Gradle version catalogs
-    - Fix using plugin inside `buildSrc`
+    - [ ] Fix using plugin inside `buildSrc`
 - [ ] HTTP client
+- [ ] Dockerize and deploy?
+
+## Intellij intergation
+
+Install the following plugin in your Intellij
+
+* `ktfmt`
+* `kotest` (https://kotest.io/docs/intellij/intellij-plugin.html)

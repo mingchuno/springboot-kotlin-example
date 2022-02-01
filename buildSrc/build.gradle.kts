@@ -12,4 +12,5 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-gradle-plugin:2.6.3")
   implementation("io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE")
   implementation("org.jetbrains.kotlin:kotlin-allopen:1.6.10")
+  implementation("com.google.devtools.ksp:symbol-processing-gradle-plugin:1.6.10-1.0.2")
 }

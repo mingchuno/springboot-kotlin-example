@@ -4,6 +4,8 @@ kotlinx-coroutines = "1.6.0"
 ktor = "1.6.7"
 spring = "2.6.3"
 kotest = "5.1.0"
+arrow = "1.0.3-alpha.1"
+mockk = "1.12.2"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
@@ -19,9 +21,9 @@ kotest-property = { module= "io.kotest:kotest-property", version.ref = "kotest" 
 kotest-extensions-spring = "io.kotest.extensions:kotest-extensions-spring:1.1.0"
 kotest-extensions-junitxml = { module = "io.kotest:kotest-extensions-junitxml", version.ref = "kotest" }
 kotest-extensions-htmlreporter = { module = "io.kotest:kotest-extensions-htmlreporter", version.ref = "kotest" }
-
-[plugins]
-spotless = "com.diffplug.gradle.spotless:6.2.0"
+arrow-optics = { module = "io.arrow-kt:arrow-optics", version.ref = "arrow" }
+arrow-optics-ksp = { module = "io.arrow-kt:arrow-optics-ksp-plugin", version.ref = "arrow" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [bundles]
 ktor-client = ["ktor-client-core", "ktor-client-cio", "ktor-client-serialization"]

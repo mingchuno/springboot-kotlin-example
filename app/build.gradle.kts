@@ -7,6 +7,8 @@ dependencies {
   implementation(libs.bundles.ktor.client)
   implementation(libs.kotlin.logging)
   implementation(libs.kotlinx.serialization.json)
+  implementation(libs.arrow.optics)
+  ksp(libs.arrow.optics.ksp)
   implementation("org.springframework.boot:spring-boot-starter")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -15,4 +17,5 @@ dependencies {
   testImplementation(libs.bundles.kotest)
   testImplementation(libs.kotest.extensions.spring)
   testImplementation(project(":test-common"))
+  testImplementation(libs.mockk)
 }
