@@ -3,6 +3,7 @@ package xyz.gutugt.springbootkotlinexample.counter
 import io.ktor.client.request.*
 import kotlinx.serialization.Serializable
 import mu.KotlinLogging
+import org.springframework.context.annotation.Primary
 import org.springframework.stereotype.Service
 import xyz.gutugt.springbootkotlinexample.http.KtorHttpClient
 
@@ -13,7 +14,8 @@ interface CounterService {
 }
 
 /** Simple service that really perform an HTTP call to external party */
-@Service
+@Service("counterService")
+@Primary
 class CounterServiceImpl : CounterService {
 
   override suspend fun visit(countRequest: CounterRequest): CounterResponse {

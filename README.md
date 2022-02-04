@@ -19,6 +19,9 @@
 - [x] HTTP client
     - [ ] DI on HTTP client?
 - [ ] Dockerize and deploy?
+- [ ] Testing issue
+    - kottest + spring DI not working on other module
+    - Junit + spring DI work on other module
 
 ## Intellij integration
 

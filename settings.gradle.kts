@@ -7,5 +7,3 @@ include("app")
 include("test-common")
 
 include("common")
-
-include("test-contract")
