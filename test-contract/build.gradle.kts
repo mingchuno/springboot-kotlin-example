@@ -1,14 +1,10 @@
 plugins { id("sampleproject.app-conventions") }
 
 dependencies {
+  implementation(project(":app"))
   implementation(project(":common"))
   implementation(libs.kotlinx.coroutines.core)
   runtimeOnly(libs.kotlinx.coroutines.reactor)
-  implementation(libs.bundles.ktor.client)
-  implementation(libs.kotlin.logging)
-  implementation(libs.kotlinx.serialization.json)
-  implementation(libs.arrow.optics)
-  ksp(libs.arrow.optics.ksp)
   implementation("org.springframework.boot:spring-boot-starter")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")

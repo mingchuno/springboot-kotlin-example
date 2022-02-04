@@ -24,6 +24,7 @@ kotest-extensions-htmlreporter = { module = "io.kotest:kotest-extensions-htmlrep
 arrow-optics = { module = "io.arrow-kt:arrow-optics", version.ref = "arrow" }
 arrow-optics-ksp = { module = "io.arrow-kt:arrow-optics-ksp-plugin", version.ref = "arrow" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+springmockk = "com.ninja-squad:springmockk:3.1.0"
 
 [bundles]
 ktor-client = ["ktor-client-core", "ktor-client-cio", "ktor-client-serialization"]

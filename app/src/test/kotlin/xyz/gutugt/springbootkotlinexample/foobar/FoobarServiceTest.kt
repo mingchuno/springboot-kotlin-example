@@ -1,10 +1,13 @@
 package xyz.gutugt.springbootkotlinexample.foobar
 
+import com.ninjasquad.springmockk.MockkBean
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.core.spec.style.FunSpec
+import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import io.mockk.*
 import java.util.*
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import xyz.gutugt.springbootkotlinexample.counter.CounterRequest
 import xyz.gutugt.springbootkotlinexample.counter.CounterResponse
@@ -13,7 +16,7 @@ import xyz.gutugt.springbootkotlinexample.counter.CounterService
 /** This example do not mock the underlying CounterService which is usually not what we want */
 // FIXME: use @ContextConfiguration instead?
 @SpringBootTest
-class FoobarServiceTestWithoutMock(private val foobarService: FoobarService) :
+class FoobarServiceTestWithSpringBootTest(private val foobarService: FoobarService) :
     FunSpec({
       test("FoobarService visit test") {
         val uuid = UUID.randomUUID().toString()
@@ -28,7 +31,7 @@ class FoobarServiceTestWithoutMock(private val foobarService: FoobarService) :
  * dependency graph but will fail when we have complex dependency structure which we want to mock
  * some part of it but not another part.
  */
-class FoobarServiceTestWithMock :
+class FoobarServiceTestWithMockk :
     BehaviorSpec({
       val counterService = mockk<CounterService>()
       val foobarString = "Can we move it to some where else?"
@@ -59,3 +62,15 @@ class FoobarServiceTestWithMock :
         }
       }
     })
+
+@SpringBootTest
+class FoobarServiceTestWithSpringMockk : StringSpec() {
+  @Autowired private lateinit var foobarService: FoobarService
+  @MockkBean private lateinit var counterService: CounterService
+  init {
+    "FoobarService test" {
+      coEvery { counterService.visit(any()) } returns CounterResponse(1)
+      foobarService.visit(CounterRequest(UUID.randomUUID().toString())).count.shouldBe(2)
+    }
+  }
+}
