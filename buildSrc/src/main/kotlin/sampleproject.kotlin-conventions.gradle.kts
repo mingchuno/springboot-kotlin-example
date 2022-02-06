@@ -38,8 +38,8 @@ configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
 detekt {
   buildUponDefaultConfig = true
-  // FIXME: enable it later
-  ignoreFailures = true
+  ignoreFailures = false
+  config = files("${project.rootDir.absolutePath}/detekt.yml")
 }
 
 tasks.withType<KotlinCompile> {

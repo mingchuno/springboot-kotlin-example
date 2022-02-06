@@ -8,6 +8,7 @@ import org.springframework.boot.runApplication
 @ConfigurationPropertiesScan("xyz.gutugt.springbootkotlinexample.config")
 class SpringbootKotlinExampleApplication
 
+@Suppress("SpreadOperator")
 fun main(args: Array<String>) {
   runApplication<SpringbootKotlinExampleApplication>(*args)
 }

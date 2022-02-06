@@ -7,7 +7,7 @@ import io.kotest.extensions.htmlreporter.HtmlReporter
 import io.kotest.extensions.junitxml.JunitXmlReporter
 
 abstract class CommonKotestProjectConfig : AbstractProjectConfig() {
-  override val parallelism = 3
+  @Suppress("MagicNumber") override val parallelism = 3
   override val assertionMode = AssertionMode.Warn
   override val globalAssertSoftly = true
   override fun extensions(): List<Extension> =

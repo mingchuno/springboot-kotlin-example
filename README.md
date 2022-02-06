@@ -17,7 +17,7 @@ complete project. This repo can act as new project scaffolding reference. Featur
 - Showcase different Spring configuration property in different envs and override. (default, testing, production)
 - Showcase application log level config w/o messing with xml.
 - kotest and mockk as our testing framework with integration to Spring Boot.
-- Integrate `ktfmt` and `detekt` for code quality checking. (`detekt` not enabled by default)
+- Integrate `ktfmt` and `detekt` for code quality checking.
 - Different test flavours including unit test, contract test with external depns and application integration test.
 - Full Intellij integration required only 2 plugins installed.
 - Full CI/CD with GitHub Actions and deployment to Heroku with custom domain.
