@@ -17,9 +17,9 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
-        run: ./gradlew check
+        run: ./gradlew clean check --no-build-cache
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
-          files: ./**/test-results/**/TEST-*.xml
+          files: './**/build/test-results/test/*.xml'
