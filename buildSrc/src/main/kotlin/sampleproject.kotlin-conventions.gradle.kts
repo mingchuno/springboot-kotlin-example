@@ -22,7 +22,7 @@ group = "xyz.gutugt"
 
 version = "0.0.1-SNAPSHOT"
 
-java.sourceCompatibility = JavaVersion.VERSION_11
+java { toolchain.languageVersion.set(JavaLanguageVersion.of(11)) }
 
 repositories { mavenCentral() }
 
