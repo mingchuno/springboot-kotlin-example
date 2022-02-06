@@ -21,8 +21,8 @@ abstract class CounterServiceContractTest : ContractTestBase() {
 }
 
 /**
- * In these example, you can see I use `@Qualifier` to choose what to be injected into the test
- * case.
+ * In these example, you can see I use `@Qualifier` to choose what to be injected into the test case
+ * exactly.
  */
 class CounterServiceMockTest : CounterServiceContractTest() {
   @Qualifier("counterServiceMock") @Autowired override lateinit var counterService: CounterService

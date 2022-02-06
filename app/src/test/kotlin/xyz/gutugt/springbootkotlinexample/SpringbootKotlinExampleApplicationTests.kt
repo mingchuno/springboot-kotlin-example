@@ -18,6 +18,10 @@ class SpringbootKotlinExampleApplicationTests : ApplicationTestBase() {
   @Autowired private lateinit var foobarController: FoobarController
   init {
     "should load context" { foobarController.shouldNotBeNull() }
+
+    "test slice specific config work" {
+      foobarController.foobar().foobar.shouldBe("This is application test only config")
+    }
   }
 }
 
@@ -35,9 +39,9 @@ class MockMvcApplicationTest : ApplicationTestBase() {
   }
 }
 
-// FIXME: wrong!
 @AutoConfigureMockMvc
 class ApplicationTestExample : ApplicationTestBase() {
+  // Use can use either constructor or @Autowire private lateinit var style. They both work too.
   @Autowired private lateinit var mockMvc: MockMvc
   @Autowired private lateinit var counterService: CounterService
 
@@ -46,7 +50,8 @@ class ApplicationTestExample : ApplicationTestBase() {
       counterService.visit(CounterRequest("foobar")).count.shouldBe(1)
     }
 
-    "should call api" {
+    "should call api when use mock impl" {
+      // Which means other parts of the SpringContext is working properly.
       mockMvc.perform(get("/visit/${UUID.randomUUID()}")).andExpect(status().isOk)
     }
   }
