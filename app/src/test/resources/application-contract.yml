@@ -1,0 +1,4 @@
+# and import the 'main' properties
+spring.config.import: file:src/main/resources/application.yml
+app:
+  foobar: "This is contract test only config"

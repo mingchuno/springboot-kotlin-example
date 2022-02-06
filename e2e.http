@@ -1,0 +1,11 @@
+### foobar
+GET http://localhost:8080/foobar
+Accept: application/json
+
+### config
+GET http://localhost:8080/config
+Accept: application/json
+
+### visit
+GET http://localhost:8080/visit/foobar
+Accept: application/json
