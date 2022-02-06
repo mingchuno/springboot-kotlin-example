@@ -16,6 +16,7 @@ interface CounterService {
 /**
  * Simple service that really perform an HTTP call to external party. Note that we also add the
  * suggested component name so that later can be `@Qualifier` in test cases (esp contract test).
+ * Intentionally not DI-ing the HTTP client depens here.
  */
 @Service("counterService")
 class CounterServiceImpl : CounterService {
