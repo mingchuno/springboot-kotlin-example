@@ -1,33 +1,53 @@
 package xyz.gutugt.springbootkotlinexample
 
 import io.kotest.matchers.nulls.shouldNotBeNull
+import io.kotest.matchers.shouldBe
 import java.util.*
-import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import xyz.gutugt.springbootkotlinexample.counter.CounterRequest
+import xyz.gutugt.springbootkotlinexample.counter.CounterService
 import xyz.gutugt.springbootkotlinexample.foobar.FoobarController
+import xyz.gutugt.springbootkotlinexample.kotest.ApplicationTestBase
 
-/** JUnit style test with spring context loading */
-@SpringBootTest
-class SpringbootKotlinExampleApplicationTests {
+/** A simple application test case that showcase things can be Autowired even under kotest. */
+class SpringbootKotlinExampleApplicationTests : ApplicationTestBase() {
   @Autowired private lateinit var foobarController: FoobarController
-  @Test
-  fun contextLoads() {
-    foobarController.shouldNotBeNull()
+  init {
+    "should load context" { foobarController.shouldNotBeNull() }
   }
 }
 
-@SpringBootTest
+/**
+ * I can even Autowire MockMvc to run application/integration test. This test is not mocking
+ * anything at all.
+ */
 @AutoConfigureMockMvc
-class MockMvcTest {
+class MockMvcApplicationTest : ApplicationTestBase() {
   @Autowired private lateinit var mockMvc: MockMvc
+  init {
+    "should call api" {
+      mockMvc.perform(get("/visit/${UUID.randomUUID()}")).andExpect(status().isOk)
+    }
+  }
+}
 
-  @Test
-  fun shouldCallApi() {
-    this.mockMvc.perform(get("/visit/${UUID.randomUUID()}")).andExpect(status().isOk)
+// FIXME: wrong!
+@AutoConfigureMockMvc
+class ApplicationTestExample : ApplicationTestBase() {
+  @Autowired private lateinit var mockMvc: MockMvc
+  @Autowired private lateinit var counterService: CounterService
+
+  init {
+    "test I am really using mock impl" {
+      counterService.visit(CounterRequest("foobar")).count.shouldBe(1)
+    }
+
+    "should call api" {
+      mockMvc.perform(get("/visit/${UUID.randomUUID()}")).andExpect(status().isOk)
+    }
   }
 }

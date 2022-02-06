@@ -22,6 +22,7 @@
 - [ ] Testing issue
     - kottest + spring DI not working on other module
     - Junit + spring DI work on other module
+- [ ] Production deployment
 
 ## Intellij integration
 

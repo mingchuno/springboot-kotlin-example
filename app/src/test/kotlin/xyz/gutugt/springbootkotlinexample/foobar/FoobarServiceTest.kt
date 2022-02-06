@@ -9,6 +9,7 @@ import io.mockk.*
 import java.util.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import xyz.gutugt.springbootkotlinexample.config.ExampleConfig
 import xyz.gutugt.springbootkotlinexample.counter.CounterRequest
 import xyz.gutugt.springbootkotlinexample.counter.CounterResponse
 import xyz.gutugt.springbootkotlinexample.counter.CounterService
@@ -34,8 +35,9 @@ class FoobarServiceTestWithSpringBootTest(private val foobarService: FoobarServi
 class FoobarServiceTestWithMockk :
     BehaviorSpec({
       val counterService = mockk<CounterService>()
+      val exampleConfig = mockk<ExampleConfig>()
       val foobarString = "Can we move it to some where else?"
-      val foobarService = FoobarServiceImpl(counterService, foobarString)
+      val foobarService = FoobarServiceImpl(counterService, exampleConfig, foobarString)
 
       afterContainer { clearAllMocks() }
 
@@ -63,6 +65,9 @@ class FoobarServiceTestWithMockk :
       }
     })
 
+/**
+ * This unit test use mockk to mock the underlying depns "on the scene" instead of using mock impl.
+ */
 @SpringBootTest
 class FoobarServiceTestWithSpringMockk : StringSpec() {
   @Autowired private lateinit var foobarService: FoobarService

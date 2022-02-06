@@ -13,6 +13,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import xyz.gutugt.springbootkotlinexample.counter.CounterResponse
 
+/**
+ * This test showcase I can use mockk and run Spring MockMvc test case. Using mockk, I can "mock on
+ * the scene".
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 class FoobarControllerTest : StringSpec() {
