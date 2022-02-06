@@ -28,7 +28,6 @@ class FoobarServiceImpl(
   override fun getConfig(): ExampleConfig = exampleConfig
 
   override suspend fun visit(request: CounterRequest): CounterResponse {
-    // TODO: validate request params
     return counterService.visit(request).plusOne()
   }
 }

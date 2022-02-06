@@ -15,7 +15,6 @@ import xyz.gutugt.springbootkotlinexample.counter.CounterResponse
 import xyz.gutugt.springbootkotlinexample.counter.CounterService
 
 /** This example do not mock the underlying CounterService which is usually not what we want */
-// FIXME: use @ContextConfiguration instead?
 @SpringBootTest
 class FoobarServiceTestWithSpringBootTest(private val foobarService: FoobarService) :
     FunSpec({

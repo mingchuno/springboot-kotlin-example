@@ -20,6 +20,7 @@ complete project. This repo can act as new project scaffolding reference. Featur
 - Integrate `ktfmt` and `detekt` for code quality checking. (`detekt` not enabled by default)
 - Different test flavours including unit test, contract test with external depns and application integration test.
 - Full Intellij integration required only 2 plugins installed.
+- Full CI/CD with GitHub Actions and deployment to Heroku with custom domain.
 
 ## Get started
 
