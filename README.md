@@ -26,9 +26,9 @@ complete project. This repo can act as new project scaffolding reference. Featur
 ```bash
 ./gradlew check # compile the project, run `detekt`, `spotlessCheck` and `test`
 # enjoy different test falvours with the following tasks
-`./gradlew testUnit`
-`./gradlew testContract`
-`./gradlew testApplication`
+./gradlew testUnit
+./gradlew testContract
+./gradlew testApplication
 ```
 
 ## Intellij integration
