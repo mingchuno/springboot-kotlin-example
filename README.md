@@ -41,6 +41,5 @@ Install the following plugin in your Intellij
 
 ## TODOs
 
-- [ ] Fix gradle multi-module plugin version management cannot use new version catalogs feature directly.
 - [ ] Replace Spring Boot WebMvc for WebFlux Reactor for better concurrent processing capability (True async,
   non-blocking IO with back pressure).
