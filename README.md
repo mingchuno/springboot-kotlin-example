@@ -2,7 +2,7 @@
 
 [![Run Gradle on PRs](https://github.com/mingchuno/springboot-kotlin-example/actions/workflows/ci.yaml/badge.svg)](https://github.com/mingchuno/springboot-kotlin-example/actions/workflows/ci.yaml)
 
-> Deployed in https://morning-temple-52344.herokuapp.com/foobar
+> Deployed in https://spring-kotlin-example.gutgut.xyz/foobar
 
 ---
 
