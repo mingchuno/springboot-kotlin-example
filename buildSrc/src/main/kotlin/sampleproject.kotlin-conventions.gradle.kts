@@ -61,6 +61,9 @@ tasks.jacocoTestReport {
   reports { xml.required.set(true) }
 }
 
+// For make sure a clean build when running `./gradlew clean build`
+tasks.named("build").get().mustRunAfter(tasks.named("clean"))
+
 // For arrow-optic integration. Omit this if you are not using ksp
 kotlin {
   sourceSets.main { kotlin.srcDir("build/generated/ksp/main/kotlin") }
