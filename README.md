@@ -2,6 +2,8 @@
 
 [![Run Gradle on PRs](https://github.com/mingchuno/springboot-kotlin-example/actions/workflows/ci.yaml/badge.svg)](https://github.com/mingchuno/springboot-kotlin-example/actions/workflows/ci.yaml)
 
+> Deployed in https://morning-temple-52344.herokuapp.com/foobar
+
 ---
 
 ## What is this?
@@ -41,4 +43,3 @@ Install the following plugin in your Intellij
 - [ ] Fix gradle multi-module plugin version management cannot use new version catalogs feature directly.
 - [ ] Replace Spring Boot WebMvc for WebFlux Reactor for better concurrent processing capability (True async,
   non-blocking IO with back pressure).
-- [ ] Dockerlize and deployment to production.
