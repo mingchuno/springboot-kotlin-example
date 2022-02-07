@@ -1,9 +1,12 @@
-package xyz.gutugt.springbootkotlinexample.counter
+package xyz.gutgut.springbootkotlinexample.counter
 
 import mu.KotlinLogging
 import org.springframework.context.annotation.Primary
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Service
+import xyz.gutugt.springbootkotlinexample.counter.CounterRequest
+import xyz.gutugt.springbootkotlinexample.counter.CounterResponse
+import xyz.gutugt.springbootkotlinexample.counter.CounterService
 
 private val logger = KotlinLogging.logger {}
 

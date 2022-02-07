@@ -8,10 +8,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import xyz.gutgut.springbootkotlinexample.ApplicationTestBase
 import xyz.gutugt.springbootkotlinexample.counter.CounterRequest
 import xyz.gutugt.springbootkotlinexample.counter.CounterService
 import xyz.gutugt.springbootkotlinexample.foobar.FoobarController
-import xyz.gutugt.springbootkotlinexample.kotest.ApplicationTestBase
 
 /** A simple application test case that showcase things can be Autowired even under kotest. */
 class SpringbootKotlinExampleApplicationTests : ApplicationTestBase() {

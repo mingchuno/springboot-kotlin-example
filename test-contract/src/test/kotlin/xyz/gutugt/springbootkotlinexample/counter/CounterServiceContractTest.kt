@@ -3,7 +3,7 @@ package xyz.gutugt.springbootkotlinexample.counter
 import io.kotest.matchers.longs.shouldBeGreaterThan
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
-import xyz.gutugt.springbootkotlinexample.kotest.ContractTestBase
+import xyz.gutgut.springbootkotlinexample.ContractTestBase
 
 /**
  * Somehow kotest factory is not working with Spring DI ... So I have to resolve to this style of
