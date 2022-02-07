@@ -6,7 +6,6 @@
  * JUnit platform for testing. You name it. Common gradle setting should be put in here
  */
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import xyz.gutgut.SpecializedTestTask
 
 plugins {
   base
@@ -68,17 +67,4 @@ tasks.named("build").get().mustRunAfter(tasks.named("clean"))
 kotlin {
   sourceSets.main { kotlin.srcDir("build/generated/ksp/main/kotlin") }
   sourceSets.test { kotlin.srcDir("build/generated/ksp/test/kotlin") }
-}
-
-// Register specialized test tasks using kotest Tag
-tasks.register<SpecializedTestTask>("testContract") {
-  systemProperty("kotest.tags", "ContractTest")
-}
-
-tasks.register<SpecializedTestTask>("testApplication") {
-  systemProperty("kotest.tags", "ApplicationTest")
-}
-
-tasks.register<SpecializedTestTask>("testUnit") {
-  systemProperty("kotest.tags", "!ApplicationTest & !ContractTest")
 }
