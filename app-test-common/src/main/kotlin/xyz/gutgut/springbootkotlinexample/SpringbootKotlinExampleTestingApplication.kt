@@ -4,8 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
-// @ComponentScan(basePackages = ["xyz.gutugt.springbootkotlinexample"], lazyInit = true)
+@SpringBootApplication(scanBasePackages = ["xyz.gutugt.springbootkotlinexample", "xyz.gutgut.mock"])
 @ConfigurationPropertiesScan("xyz.gutugt.springbootkotlinexample.config")
 class SpringbootKotlinExampleTestingApplication
 

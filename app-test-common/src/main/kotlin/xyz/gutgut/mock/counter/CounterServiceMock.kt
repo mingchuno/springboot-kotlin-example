@@ -1,4 +1,4 @@
-package xyz.gutgut.springbootkotlinexample.counter
+package xyz.gutgut.mock.counter
 
 import mu.KotlinLogging
 import org.springframework.context.annotation.Primary
